@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bus Seat Booking System</title>
+		<link rel="stylesheet" href="./styles/styles.css" />
+	</head>
+	<body>
+		<div class="account-page" id="account-page">
+			<h1 class="page-header">BLUE BUS</h1>
+			<div class="login-page" id="login-page">
+				<div class="logo-box" id="logo-box">
+					<img class="logo" id="logo" src="./assets/8iEjn57BT.png" alt="logo" />
+				</div>
+				<div id="login-box">
+					<form
+						class="login-info"
+						id="login-info"
+						onsubmit="checkLogin(); return false"
+					>
+						<input
+							class="user-input"
+							id="username"
+							type="text"
+							placeholder="   username"
+							autocomplete="off"
+							required
+						/>
+
+						<input
+							class="user-input"
+							id="password"
+							type="password"
+							placeholder="   password"
+							required
+						/>
+						<input
+							type="submit"
+							class="login-button"
+							id="login-button"
+							value="Login"
+						/>
+					</form>
+					<p class="signup-button" id="signup-button">
+						Don't have an account?<button class="signup" id="signup">
+							sign-up
+						</button>
+					</p>
+				</div>
+				<div class="signup-page" id="signup-page">
+					<div>
+						<input
+							class="user-input"
+							id="new-user"
+							type="text"
+							placeholder="   username"
+							autocomplete="off"
+							required
+						/>
+					</div>
+					<div>
+						<input
+							class="user-input"
+							id="new-password"
+							type="password"
+							placeholder="  new password"
+						/>
+					</div>
+					<div>
+						<input
+							class="user-input"
+							id="confirm-password"
+							type="password"
+							placeholder="   confirm password"
+						/>
+					</div>
+					<div class="feedback" id="feedback"></div>
+					<button class="login-button" id="signup-submit">Submit</button>
+					<p class="signup-button" id="signup-button">
+						Already have an account?<button class="signup" id="login-return">
+							login
+						</button>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="booking-page" id="booking-page">
+			<div class="main-page-header" id="main-page-header">
+				<div class="home-ticket-button">
+					<button class="my-tickets" id="home-button">Home</button>
+					<button class="my-tickets" id="my-tickets">My Tickets</button>
+				</div>
+				<h1 class="page-header">BLUE BUS</h1>
+				<button class="logout-button" id="logout-button">Log out</button>
+			</div>
+			<div class="city-selection-page" id="city-selection-page">
+				<div>
+					<img src="./assets/loading2.gif" alt="bus-logo" class="bus-logo" />
+				</div>
+				<form
+					class="city-input-column"
+					onsubmit="clickOnSearch(); return false"
+				>
+					<p class="from-to from">From</p>
+					<p class="from-to to">To</p>
+					<div class="from-city">
+						<input
+							list="from-city-list"
+							name="from-city"
+							id="selected-from-city"
+							class="city-selector"
+							value="Coimbatore"
+							autocomplete="off"
+						/>
+						<datalist id="from-city-list"></datalist>
+					</div>
+					<div class="to-city">
+						<input
+							list="to-city-list"
+							name="to-city"
+							id="selected-to-city"
+							class="city-selector"
+							value="Banglore"
+							autocomplete="off"
+						/>
+						<datalist id="to-city-list"></datalist>
+					</div>
+					<p class="journey-date">Date of Journey</p>
+					<input
+						type="date"
+						class="date-selector"
+						id="selected-date"
+						required
+					/>
+					<input
+						type="submit"
+						class="search-button select-ticket"
+						id="search-button"
+						value="Search"
+					/>
+				</form>
+			</div>
+			<div class="list-of-bus-page" id="list-of-bus-page">
+				<div><img src="./assets/bus.gif" alt="bus" class="bus-logo" /></div>
+				<div class="list-of-bus-column">
+					<h1 class="list-header" id="list-header"></h1>
+					<div class="bus-list" id="bus-list"></div>
+				</div>
+			</div>
+			<div class="ticket-selection-page" id="ticket-selection-page">
+				<div>
+					<img src="./assets/withbg.gif" alt="bus-logo" class="bus-logo" />
+				</div>
+				<form
+					class="ticket-column"
+					id="ticket-column"
+					onsubmit="getTravelerInfo(); return false"
+				>
+					<h1 class="bus-detail bus-name" id="selected-bus-name">
+						Oxygen Travels
+					</h1>
+					<h2 class="bus-detail" id="selected-date">2022-12-23</h2>
+					<div class="bus-travel-details" id="selected-start-time">
+						Start Time : 9:00PM
+					</div>
+					<div class="bus-travel-details selected-end" id="selected-end-time">
+						End Time : 4:00AM
+					</div>
+					<div class="bus-travel-details selected-hours" id="selected-hours">
+						7 Hours
+					</div>
+					<div
+						class="bus-travel-details selected-price"
+						id="selected-ticket-price"
+					>
+						Tickets Price : Rs500
+					</div>
+					<div>
+						No of Tickets :
+						<input
+							type="number"
+							id="ticket-number"
+							name="number"
+							min="1"
+							max="6"
+							value="1"
+							oninput="this.value=(parseInt(this.value)<1)?1:parseInt(this.value)>6?6:this.value"
+							autocomplete="off"
+							required
+						/>
+					</div>
+					<input
+						type="submit"
+						class="select-ticket submit-ticket"
+						id="ticket-confirm"
+						value="Submit"
+					/>
+				</form>
+			</div>
+			<div class="traveler-info-page" id="traveler-info-page">
+				<div class="info-form" id="info-form">
+					<div class="bus-detail-info" id="bus-detail-info">
+						<h1 class="bus-detail" id="conform-location">
+							Coimbatore TO Banglore
+						</h1>
+						<h1 class="bus-detail" id="conform-bus-name">Oxygen Travels</h1>
+						<div class="bus-travel-detail" id="confrom-date">2023-01-02</div>
+						<div class="bus-travel-detail" id="confrom-start">9:00AM</div>
+						<div class="bus-travel-detail" id="confrom-ticket-no">
+							Number of Tickets : 1
+						</div>
+						<div class="bus-travel-detail" id="conform-price">
+							Ticket Price : Rs500
+						</div>
+					</div>
+					<div class="travel-list-column" id="traveler-column">
+						<div class="traveler" id="traveler">
+							<div class="bus-travel-details">Name of the Traveler</div>
+							<input
+								type="text"
+								class="traveler-input"
+								id="traveler-name-input"
+								placeholder="   Name of the traveler"
+							/>
+							<div class="bus-travel-details">Age</div>
+							<input
+								type="number"
+								class="traveler-input"
+								id="traveler-age"
+								placeholder="  Age"
+							/>
+							<div class="bus-travel-details">Gender</div>
+							<select class="card-input" name="gender" id="gender">
+								<option value="Male">Male</option>
+								<option value="Female">Female</option>
+								<option value="other">Other</option>
+							</select>
+						</div>
+					</div>
+					<button class="select-ticket" id="traveler-confrom-button">
+						Continue
+					</button>
+				</div>
+			</div>
+			<div class="payment-page" id="payment-page">
+				<div class="conformation-column" id="conformation-column">
+					<div class="payment-header">PAYMENT</div>
+					<div class="payment-selection-column">
+						<div class="traveler-detail-display" id="traveler-detail-display">
+							<div class="payment-page-details" id="traveler-details">
+								<div class="bus-travel-details">Name of the Traveler</div>
+								<div class="bus-travel-details">Shiyam</div>
+								<div class="bus-travel-details">Age of the Traveler</div>
+								<div class="bus-travel-details">21</div>
+								<div class="bus-travel-details">Gender of the Traveler</div>
+								<div class="bus-travel-details">Male</div>
+							</div>
+						</div>
+						<div class="payment-page-details conform-details">
+							<div class="bus-travel-details" id="bus-confirmation">
+								Oxygen Travels
+							</div>
+							<div class="bus-travel-details" id="location-confirmation">
+								Coimbatore TO Banglore
+							</div>
+							<div class="bus-travel-details" id="date-confirmation">
+								2023-01-02
+							</div>
+							<div class="bus-travel-details" id="start-confirmation">
+								9:00AM
+							</div>
+							<div class="bus-travel-details" id="confirm-ticket-number">
+								Number of Tickets : 1
+							</div>
+							<div class="bus-travel-details" id="confirm-ticket-price">
+								Ticket Price : Rs500
+							</div>
+							<div class="bus-travel-details" id="total-price">
+								Total price : Rs500
+							</div>
+							<select class="card-input" name="payment" id="payment">
+								<option value="UPI">UPI Payment</option>
+								<option value="Card">Card Payment</option>
+							</select>
+						</div>
+						<button class="select-ticket" id="payment-button">Continue</button>
+					</div>
+				</div>
+			</div>
+			<div class="upi-payment-page" id="upi-page">
+				<div>
+					<img
+						src="./assets/18_UPI_Make-or-Receive-Payment-using-UPI-on-Paytm.jpg"
+						alt="upi-logo"
+						class="bus-logo"
+					/>
+				</div>
+				<form
+					class="upi-column"
+					id="upi-column"
+					onsubmit="confirmTicket(); return false"
+				>
+					<div>UPI ID</div>
+					<input
+						type="email"
+						class="upi-id card-input"
+						id="upi-id"
+						placeholder=" UPI Id"
+						autocomplete="off"
+						required
+					/>
+					<input
+						type="submit"
+						class="select-ticket"
+						id="upi-pay-button"
+						value="Pay"
+					/>
+				</form>
+			</div>
+			<div class="card-payment-page" id="card-payment-page">
+				<div>
+					<img src="./assets/pos.gif" alt="pay-logo" class="bus-logo" />
+				</div>
+				<form
+					class="card-payment-column"
+					id="card-payment-logo"
+					onsubmit="confirmTicket(); return false"
+				>
+					<div class="card-number-tag">Card Number</div>
+					<input
+						type="text"
+						class="card-number card-input"
+						id="card-number"
+						onkeypress="return (event.charCode !=8 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57))"
+						maxlength="16"
+						size="16"
+						placeholder=" Enter card number"
+						autocomplete="off"
+						required
+					/>
+					<div class="card-name-tag">Name of Card Holder</div>
+					<input
+						type="text"
+						class="card-holder-name card-input"
+						id="card-holer-name"
+						placeholder=" Enter card holder name"
+						autocomplete="off"
+						required
+					/>
+					<div class="expiry-date-tag">Expiry Date</div>
+					<div class="expiry-date">
+						<select name="month" id="expiry-month">
+							<option value="Jan">Jan</option>
+							<option value="Feb">Feb</option>
+							<option value="Mar">Mar</option>
+							<option value="Apr">Apr</option>
+							<option value="May">May</option>
+							<option value="Jun">Jun</option>
+							<option value="Jul">Jul</option>
+							<option value="Aug">Aug</option>
+							<option value="Sep">Sep</option>
+							<option value="Oct">Oct</option>
+							<option value="Nov">Nov</option>
+							<option value="Dec">Dec</option>
+						</select>
+						<select name="year" id="expiry-year">
+							<option value="2023">2023</option>
+							<option value="2024">2024</option>
+							<option value="2025">2025</option>
+							<option value="2026">2026</option>
+							<option value="2027">2027</option>
+							<option value="2028">2028</option>
+							<option value="2029">2029</option>
+							<option value="2030">2030</option>
+							<option value="2031">2031</option>
+							<option value="2032">2032</option>
+							<option value="2033">2033</option>
+						</select>
+					</div>
+					<div class="cvv-tag">CVV</div>
+					<input
+						type="password"
+						class="cvv card-input"
+						id="cvv"
+						placeholder="CVV"
+						maxlength="3"
+						size="3"
+					/>
+					<input
+						type="submit"
+						class="select-ticket confirm-pay"
+						id="card-payment-button"
+					/>
+				</form>
+			</div>
+			<div class="ticket-conform-modal" id="conform-modal">
+				<div class="modal-content">
+					<div><img src="./assets/done.gif" alt="done" class="bus-logo" /></div>
+					<button class="select-ticket" id="done-button">Done</button>
+				</div>
+			</div>
+			<div class="my-ticket-page" id="my-ticket-page">
+				<div>
+					<img src="./assets/ticket.gif" alt="ticket" class="bus-logo" />
+				</div>
+				<div class="list-of-bus-column">
+					<h1 class="list-header">My Tickets</h1>
+					<div class="bus-list" id="my-ticket-list">
+						<div class="user-ticket" id="user-ticket">
+							<h1 class="bus-detail" id="ticket-bus-name">Oxygen Travels</h1>
+							<h2 class="bus-detail" id="ticket-travel-date">2023-03-01</h2>
+							<div class="bus-travel-details" id="travel-locations">
+								Banglore TO Coimbatore
+							</div>
+							<div class="bus-travel-details" id="travel-ticket-count">
+								Number of Tickets : 1
+							</div>
+							<div class="bus-travel-details" id="travel-ticket-price">
+								Ticket Price : Rs400
+							</div>
+							<div class="bus-travel-details" id="travel-ticket-price">
+								Total Price : Rs400
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="logout-container" id="logout-container">
+				<div class="logout-box" id="logout-box">
+					<p class="logout-text">Do you want to logout?</p>
+					<div class="logout-buttons">
+						<button
+							class="confirm-button"
+							id="yes"
+							onclick="confirmLogout(this.id)"
+						>
+							Yes
+						</button>
+						<button
+							class="confirm-button"
+							id="no"
+							onclick="confirmLogout(this.id)"
+						>
+							No
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="./Data/fromdata.js"></script>
+	<script type="text/javascript" src="./Data/todata.js"></script>
+	<script type="text/javascript" src="./Data/buses.js"></script>
+	<script src="./scripts/index.js"></script>
+	<script src="./scripts/busbookingdata.js"></script>
+</html>

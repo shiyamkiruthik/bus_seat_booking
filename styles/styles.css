@@ -1,0 +1,493 @@
+.account-page {
+	background-color: rgb(75, 187, 227);
+	display: block;
+	height: 700px;
+}
+.booking-page {
+	display: none;
+	height: 745px;
+	background-color: rgb(163, 226, 255);
+}
+.bus-logo {
+	width: 32em;
+	height: 25em;
+}
+.city-input-column {
+	display: grid;
+	grid-template-columns: 13em 8em 5em 8em;
+	align-content: center;
+	justify-content: center;
+	height: 300px;
+	row-gap: 1em;
+	align-items: center;
+	background: aliceblue;
+	width: 650px;
+	box-shadow: 1em 1em 1em grey;
+}
+.city-selector {
+	height: 2em;
+	border-radius: 1em;
+	width: 15em;
+	border: 0.1em gray solid;
+}
+.city-selection-page {
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 7em;
+	align-items: center;
+}
+.date-selector {
+	width: 9em;
+	height: 2em;
+	border-radius: 1em;
+}
+.from-to {
+	font-size: 2em;
+	color: mediumblue;
+	margin: 0.1px;
+}
+.from {
+	grid-column: 1/3;
+	grid-row: 1;
+}
+.to {
+	grid-column: 3/5;
+	grid-row: 1;
+}
+.from-city {
+	grid-column: 1/3;
+	grid-row: 2;
+}
+.to-city {
+	grid-column: 3/5;
+	grid-row: 2;
+}
+.journey-date {
+	color: mediumblue;
+	font-size: 1.5em;
+}
+.login-button {
+	background-color: mediumblue;
+	border: mediumblue;
+	border-radius: 1em;
+	color: white;
+	height: 2em;
+	width: 4.5em;
+}
+.login-info {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2em;
+}
+.login-page {
+	align-items: center;
+	display: flex;
+	gap: 6em;
+	height: 600px;
+	justify-content: center;
+}
+.logo {
+	height: 25em;
+	padding-right: 5em;
+	width: 30em;
+}
+.logout-button {
+	height: 2.5em;
+	width: 5em;
+	border-radius: 1em;
+	background-color: mediumblue;
+	color: white;
+	border: mediumblue;
+	display: flex;
+	justify-content: center;
+	padding: 0.6em;
+}
+.main-page-header {
+	display: flex;
+	background-color: rgb(75, 187, 227);
+	justify-content: space-between;
+	padding: 0em 2em;
+	align-items: center;
+}
+.my-tickets {
+	height: 2.5em;
+	width: 6.5em;
+	border-radius: 1em;
+	background-color: mediumblue;
+	color: white;
+	border: mediumblue;
+	display: flex;
+	justify-content: center;
+	padding: 0.5em;
+}
+.page-header {
+	color: #020295;
+	margin-top: 0px;
+	padding-top: 1em;
+	text-align: center;
+}
+.search-button {
+	grid-column: 2;
+	grid-row: 4;
+}
+.signup {
+	height: 2em;
+	width: 4.5em;
+	border-radius: 1em;
+	background-color: mediumblue;
+	color: white;
+	border: mediumblue;
+}
+.signup-page {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+}
+.no-bus {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.user-input {
+	width: 14em;
+	border-radius: 1em;
+	height: 1.8em;
+	border: cyan;
+}
+.list-of-bus-page {
+	display: none;
+	justify-content: center;
+}
+.bus-list {
+	background-color: aliceblue;
+	width: 800px;
+	height: 531px;
+}
+::-webkit-scrollbar {
+	width: 5px;
+}
+::-webkit-scrollbar-track {
+	background: beige;
+}
+::-webkit-scrollbar-thumb {
+	background: cornflowerblue;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: teal;
+}
+.list-header {
+	text-align: center;
+	background-color: rgb(5 100 134);
+	margin: 0px;
+	color: aliceblue;
+	padding: 0.8em;
+}
+.bus-detail {
+	margin-top: 0px;
+	padding-top: 0.5em;
+}
+.bus {
+	display: grid;
+	grid-template-columns: 18em 6em 15em;
+	align-items: center;
+	justify-content: center;
+	justify-items: center;
+	row-gap: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid;
+	background-color: aliceblue;
+}
+.bus-travel-details {
+	font-size: 1.3em;
+}
+.list-of-bus-column {
+	height: 620px;
+	overflow-y: auto;
+	width: 805px;
+}
+.select-ticket {
+	height: 2.5em;
+	width: 8.5em;
+	border-radius: 1em;
+	background-color: mediumblue;
+	color: white;
+	border: mediumblue;
+	display: flex;
+	justify-content: center;
+	padding: 0.5em;
+}
+.ticket-selection-page {
+	display: none;
+	justify-content: center;
+	margin-top: 9em;
+}
+.ticket-column {
+	display: grid;
+	grid-template-columns: 13em 7em 12em;
+	align-content: center;
+	justify-content: center;
+	height: 350px;
+	row-gap: 1em;
+	align-items: center;
+	background: aliceblue;
+	width: 650px;
+	box-shadow: 1em 1em 1em grey;
+}
+.bus-name {
+	grid-column: 1/3;
+}
+.selected-end {
+	grid-column: 3/4;
+}
+.selected-hours {
+	grid-column: 2/3;
+}
+.selected-price {
+	grid-column: 1/3;
+}
+.submit-ticket {
+	grid-column: 2/3;
+}
+.list-bus-name {
+	grid-column: 1/3;
+}
+.list-end-time {
+	grid-column: 3/4;
+}
+.travel-hours {
+	grid-column: 2/3;
+}
+.list-price {
+	grid-column: 1/2;
+}
+.list-select {
+	grid-column: 3/4;
+}
+.traveler-info-page {
+	display: none;
+	justify-content: center;
+}
+.info-form {
+	height: 620px;
+	overflow-y: auto;
+	background-color: aliceblue;
+	width: 800px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 2em;
+}
+.bus-detail-info {
+	display: grid;
+	grid-template-columns: 26em 20em;
+	padding-top: 3em;
+	justify-content: center;
+	align-items: center;
+	row-gap: 2em;
+}
+.bus-travel-detail {
+	font-size: 1.5em;
+}
+.travel-list-column {
+	padding-top: 3em;
+	padding-bottom: 3em;
+}
+.traveler {
+	display: grid;
+	row-gap: 2em;
+	grid-template-columns: 1fr 1fr;
+	justify-items: center;
+	background-color: aliceblue;
+	padding-top: 3em;
+	column-gap: 5em;
+}
+.payment-page {
+	display: none;
+	justify-content: center;
+}
+.conformation-column {
+	height: 620px;
+	overflow-y: auto;
+	background-color: aliceblue;
+	width: 800px;
+	padding-bottom: 2em;
+}
+.payment-header {
+	text-align: center;
+	background-color: rgb(5 100 134);
+	margin: 0px;
+	color: aliceblue;
+	padding: 0.8em;
+}
+.payment-page-details {
+	display: grid;
+	grid-template-columns: 20em 20em;
+	align-items: center;
+	justify-content: center;
+	justify-items: center;
+	row-gap: 2em;
+	padding-top: 3em;
+}
+.conform-details {
+	padding-top: 3em;
+	padding-bottom: 3em;
+}
+.payment-selection-column {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.upi-payment-page {
+	display: none;
+	justify-content: space-evenly;
+	margin-top: 7em;
+	align-items: center;
+}
+.upi-column {
+	display: grid;
+	grid-template-columns: 4em 13em 8em;
+	align-content: center;
+	justify-content: center;
+	height: 269px;
+	column-gap: 1em;
+	align-items: center;
+	background: aliceblue;
+	width: 547px;
+	box-shadow: 1em 1em 1em grey;
+	justify-items: center;
+}
+.card-payment-page {
+	display: none;
+	justify-content: space-evenly;
+	margin-top: 7em;
+	align-items: center;
+}
+.card-payment-column {
+	display: grid;
+	grid-template-columns: 9em 6em 9em;
+	align-content: center;
+	justify-content: center;
+	height: 269px;
+	row-gap: 1em;
+	align-items: center;
+	background: aliceblue;
+	width: 547px;
+	box-shadow: 1em 1em 1em grey;
+}
+.expiry-date {
+	display: flex;
+	gap: 0.5em;
+}
+.card-number {
+	grid-column: 2/4;
+}
+.card-holder-name {
+	grid-column: 2/4;
+}
+.card-input {
+	border-radius: 1em;
+	height: 2em;
+	border: 1px solid;
+}
+.cvv-tag {
+	grid-column: 1/2;
+}
+.confirm-pay {
+	grid-column: 2/3;
+}
+.no-bus-details {
+	font-size: 1.5em;
+	font-family: cursive;
+	color: #c41010;
+}
+.ticket-conform-modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.select-ticket:hover,
+.select-ticket:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+.modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.my-ticket-page {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+}
+.user-ticket {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: center;
+	align-items: center;
+	justify-items: center;
+	row-gap: 1em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid;
+	background-color: aliceblue;
+}
+.logout-container {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.logout-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1em;
+	height: 200px;
+	background-color: aliceblue;
+	width: 270px;
+	justify-content: center;
+}
+.home-ticket-button {
+	display: flex;
+	gap: 1em;
+}
+.confirm-button {
+	background-color: mediumblue;
+	border-radius: 1em;
+	border: mediumblue;
+	color: white;
+	margin-right: 2em;
+	height: 2em;
+	width: 4em;
+}
+.logout-buttons {
+	grid-template-columns: 1fr 1fr;
+	display: grid;
+	column-gap: 1.5em;
+}
+.logout-text {
+	font-size: 1.3em;
+}
